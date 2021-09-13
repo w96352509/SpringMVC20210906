@@ -3,6 +3,7 @@ package com.mvc.controller;
 import javax.ws.rs.Path;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,9 +34,15 @@ public class Hi {
 	public ModelAndView sayhi() {
 		ModelAndView mav = new ModelAndView();
 		//mav.setViewName("/WEB-INF/view/sayhi.jsp"); //渲染器名稱
-		mav.setViewName("sayhi"); //於springmvc-servlet.xml 中有定義 view
+		mav.setViewName("sayhi"); //於springmvc-servlet.xml 中有定義 viewResolver 標籤的寫法
 		mav.addObject("username","John");
 		return mav ;
+	}
+	@GetMapping("/sayhi2") //指定get
+	//不可以加@ResponseBody
+	public String sayhi2(Model model) {
+		model.addAttribute("username","Mary");
+		return "sayhi" ; //直接回傳就是view的名字(字串)
 	}
 }
 
