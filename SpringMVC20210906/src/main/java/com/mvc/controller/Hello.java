@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mvc.entity.User;
+
 @Controller
 @RequestMapping(value = "/hello")
 public class Hello {
@@ -98,7 +100,7 @@ public class Hello {
 	public String any() {
 		return "Any";
 	}
-	
+
 	/*
 	 * 得到多筆資料
 	 * 路徑：/age?a=18&a=19&a=20 
@@ -148,5 +150,14 @@ public class Hello {
 	@ResponseBody
 	public String mix(@RequestParam Map<String, String> map) {
 		return map.toString();
+	}
+	/*
+	 * pojo物件(自動抓取) 
+	 * 網址/user?name=John&age=18
+	 * */
+	@RequestMapping("/user")
+	@ResponseBody
+	public String getUser(User user) {
+		return user.toString();
 	}
 }
