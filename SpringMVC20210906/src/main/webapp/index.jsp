@@ -5,6 +5,9 @@
 <head>
 <meta charset="BIG5">
 <title>Insert title here</title>
+<script type="text/javascript">
+  location.href='./mvc/product/'
+</script>
 </head>
 <body>
   spring

@@ -1,15 +1,15 @@
-package com.mvc.products;
+package com.mvc.entity.products;
 
 public class Group {
-	private Integer gid; // 分類id
+	private Integer gid;  // 分類 id
 	private String gname; // 分類名稱
-
+	
 	public Group() {
-
+	
 	}
-
+	
 	public Group(Integer gid, String gname) {
-        this.gid = gid;
+		this.gid = gid;
 		this.gname = gname;
 	}
 
@@ -34,5 +34,6 @@ public class Group {
 		return "Group [gid=" + gid + ", gname=" + gname + "]";
 	}
 	
-
+	
+	
 }
